@@ -45,7 +45,7 @@ def decrypt(encrypted_text: str, shift: int) -> str:
 		elif 65 <= ord(i) <= (65+shift):
 			k = ord(i) + (26-shift)
 			decrypted += chr(k)
-		else: 
+		else:
 			decrypted += i
 	return decrypted
 
