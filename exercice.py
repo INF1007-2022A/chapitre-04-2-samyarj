@@ -35,8 +35,19 @@ def encrypt(text: str, shift: int) -> str:
 			encrypted += chr(k)
 	return encrypted
 
-def decrypt(encrypted_text, shift):
-	return ""
+def decrypt(encrypted_text: str, shift: int) -> str:
+	decrypted = str()
+
+	for i in encrypted_text:
+		if (65+shift) <= ord(i) < 90:
+			k = ord(i) - shift
+			decrypted += chr(k)
+		elif 65 <= ord(i) <= (65+shift):
+			k = ord(i) + (26-shift)
+			decrypted += chr(k)
+		else: 
+			decrypted += i
+	return decrypted
 
 
 if __name__ == "__main__":
