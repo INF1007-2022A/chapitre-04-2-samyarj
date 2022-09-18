@@ -23,8 +23,17 @@ def get_random_sentence(animals: tuple, adjectives: tuple, fruits: tuple) -> lis
 	sentence = f"Aujourd’hui, j’ai vu un {ran_animal} s’emparer d’un panier {ran_adj} plein de {ran_fruit}."
 	return sentence
 
-def encrypt(text, shift):
-	return ""
+def encrypt(text: str, shift: int) -> str:
+	encrypted = str() # retrun value; all uppercase
+	text = text.upper()
+	for i in text:
+		if 65 <= ord(i) < (90-shift):
+			k = ord(i) + shift
+			encrypted += chr(k)
+		elif (90-shift) <= ord(i) <= 90:
+			k = ord(i) - (26-shift)
+			encrypted += chr(k)
+	return encrypted
 
 def decrypt(encrypted_text, shift):
 	return ""
