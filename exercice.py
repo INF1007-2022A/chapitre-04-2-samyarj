@@ -3,8 +3,17 @@
 
 import random
 
-def get_first_part_of_name(name):
-	return ""
+def get_first_part_of_name(name: str) -> str:
+	name = name.lower()
+	name = name[0].upper()+name[1::]
+	k = int() # detects the position of '-'
+	for i in name:
+		if i == '-':
+			break
+		else:
+			k+=1
+	result= name[:k] # return name until the '-' position
+	return result
 
 def get_random_sentence(animals, adjectives, fruits):
 	return ""
