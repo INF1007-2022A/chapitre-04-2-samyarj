@@ -15,8 +15,13 @@ def get_first_part_of_name(name: str) -> str:
 	result= name[:k] # return name until the '-' position
 	return result
 
-def get_random_sentence(animals, adjectives, fruits):
-	return ""
+def get_random_sentence(animals: tuple, adjectives: tuple, fruits: tuple) -> list[str] :
+	ran_animal = random.choice(animals)
+	ran_adj = random.choice(adjectives)
+	ran_fruit = random.choice(fruits)
+	List = [ran_animal, ran_adj, ran_fruit] # set of generated random elements of tupples
+	sentence = f"Aujourd’hui, j’ai vu un {ran_animal} s’emparer d’un panier {ran_adj} plein de {ran_fruit}."
+	return sentence
 
 def encrypt(text, shift):
 	return ""
