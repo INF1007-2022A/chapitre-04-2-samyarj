@@ -33,6 +33,8 @@ def encrypt(text: str, shift: int) -> str:
 		elif (90-shift) <= ord(i) <= 90:
 			k = ord(i) - (26-shift)
 			encrypted += chr(k)
+		else:
+			encrypted += i
 	return encrypted
 
 def decrypt(encrypted_text: str, shift: int) -> str:
